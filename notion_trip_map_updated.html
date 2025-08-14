@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notion Trip Map</title>
+    <meta charset="utf-8">
+    <style>
+        #map {{
+            height: 100vh;
+            width: 100%;
+        }}
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAz6366teB2HIIxRi1MpJKmxePClo_LGGU"></script>
+    <script>
+        function initMap() {{
+            var map = new google.maps.Map(document.getElementById('map'), {{
+                zoom: 7,
+                center: {{lat: 23.5, lng: 121}},
+            }});
+
+            var geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode({ 'address': '台北市信義路五段7號' }, function(results, status) {
+                if (status === 'OK') {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        title: '台北101',
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 8,
+                            fillColor: '#FFC0CB',
+                            fillOpacity: 0.8,
+                            strokeWeight: 1,
+                            strokeColor: '#333'
+                        }
+                    });
+                    var infowindow = new google.maps.InfoWindow({
+                        content: '<strong>台北101</strong><br>著名地標與觀景台<br>地址：台北市信義路五段7號<br>拜訪時間：2023-08-01'
+                    });
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                }
+            });
+    
+            geocoder.geocode({ 'address': '新北市瑞芳區' }, function(results, status) {
+                if (status === 'OK') {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        title: '九份老街',
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 8,
+                            fillColor: '#FFD700',
+                            fillOpacity: 0.8,
+                            strokeWeight: 1,
+                            strokeColor: '#333'
+                        }
+                    });
+                    var infowindow = new google.maps.InfoWindow({
+                        content: '<strong>九份老街</strong><br>山城老街與美食<br>地址：新北市瑞芳區<br>拜訪時間：2023-08-02'
+                    });
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                }
+            });
+    
+            geocoder.geocode({ 'address': '台中市西屯區惠來路二段101號' }, function(results, status) {
+                if (status === 'OK') {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        title: '台中歌劇院',
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 8,
+                            fillColor: '#A52A2A',
+                            fillOpacity: 0.8,
+                            strokeWeight: 1,
+                            strokeColor: '#333'
+                        }
+                    });
+                    var infowindow = new google.maps.InfoWindow({
+                        content: '<strong>台中歌劇院</strong><br>現代建築與表演藝術<br>地址：台中市西屯區惠來路二段101號<br>拜訪時間：2023-08-03'
+                    });
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                }
+            });
+    
+            geocoder.geocode({ 'address': '高雄市鹽埕區' }, function(results, status) {
+                if (status === 'OK') {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        title: '高雄駁二藝術特區',
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 8,
+                            fillColor: '#808080',
+                            fillOpacity: 0.8,
+                            strokeWeight: 1,
+                            strokeColor: '#333'
+                        }
+                    });
+                    var infowindow = new google.maps.InfoWindow({
+                        content: '<strong>高雄駁二藝術特區</strong><br>文創園區與展覽<br>地址：高雄市鹽埕區<br>拜訪時間：2023-08-04'
+                    });
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                }
+            });
+    
+            geocoder.geocode({ 'address': '花蓮縣秀林鄉' }, function(results, status) {
+                if (status === 'OK') {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        title: '花蓮太魯閣',
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 8,
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.8,
+                            strokeWeight: 1,
+                            strokeColor: '#333'
+                        }
+                    });
+                    var infowindow = new google.maps.InfoWindow({
+                        content: '<strong>花蓮太魯閣</strong><br>壯麗峽谷與步道<br>地址：花蓮縣秀林鄉<br>拜訪時間：2023-08-05'
+                    });
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                }
+            });
+    
+            geocoder.geocode({ 'address': '台南市安平區' }, function(results, status) {
+                if (status === 'OK') {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        title: '台南安平古堡',
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 8,
+                            fillColor: '#0000FF',
+                            fillOpacity: 0.8,
+                            strokeWeight: 1,
+                            strokeColor: '#333'
+                        }
+                    });
+                    var infowindow = new google.maps.InfoWindow({
+                        content: '<strong>台南安平古堡</strong><br>歷史古蹟與文化<br>地址：台南市安平區<br>拜訪時間：2023-08-06'
+                    });
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                }
+            });
+    
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <div id="map"></div>
+</body>
+</html>
